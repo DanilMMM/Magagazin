@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" 
+		x:CompileBindings="False"
+        x:Class="AvaloniaApplication2.MainWindow" 
+        Title="AvaloniaApplication2">
+	<Grid
+	ShowGridLines="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<StackPanel
+			Grid.Column="1" Grid.Row="0"
+			Orientation="Vertical">
+			<TextBox
+				Name="TBox"/>
+			<Button
+				Name="btn_add"
+				Click="AddItem"
+				HorizontalAlignment="Center"
+				Height="30" Width="100"/>
+		</StackPanel>
+		<ListBox
+			Name="LBox">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border
+						BorderThickness="2"
+						CornerRadius="4"
+						BorderBrush="Black">
+						<Grid
+							ShowGridLines="True"
+							ColumnDefinitions="*,*,*">
+							<TextBlock Text="{Binding Name}"/>
+							<TextBlock Text="{Binding Price}" Grid.Column="1"/>
+							<Button Tag="{Binding Id}" Grid.Column="2" Click="DelItem"/>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+	
+	
+</Window>

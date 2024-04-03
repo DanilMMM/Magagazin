@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" 
+		x:CompileBindings="False"
+        x:Class="AvaloniaApplication2.MainWindow" 
+        Title="AvaloniaApplication2">
+<Grid
+	ShowGridLines="False">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="100"/>
+		<RowDefinition Height="*"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<Grid.ColumnDefinitions>
+		<ColumnDefinition Width="*"/>
+		<ColumnDefinition Width="*"/>
+		<ColumnDefinition Width="*"/>
+	</Grid.ColumnDefinitions>
+
+	<StackPanel
+		Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1"
+		Orientation="Vertical">
+
+		<TextBox Width="200"
+				 Watermark="Логин"
+				 Classes="revealLoginButton"
+				 UseFloatingWatermark="True"
+				 Grid.Row="1"
+				 Grid.ColumnSpan="1"
+				 Grid.RowSpan="0"/>
+
+		<TextBox Width="200"
+				Watermark="Пароль"
+				Classes="revealPasswordButton"
+				UseFloatingWatermark="True"
+				PasswordChar="*"
+				Grid.Row="1"
+				Grid.Column="2"
+				Grid.RowSpan="0"/>
+		
+		<Button
+			  Name="btn_per"
+			  Click="Perexod"
+			  Content="Вход"
+			  HorizontalContentAlignment="Center"
+			  HorizontalAlignment="Center"
+			  BorderThickness="1"
+			  CornerRadius="10"
+			  BorderBrush="DarkOrange"
+			  Background="DarkSalmon"
+			  Foreground="Yellow"
+			  Height="32" Width="128"
+			  Grid.Row="1"
+			  Grid.Column="1"
+			  Grid.RowSpan="6"/>
+	</StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Grid>
+</Window>
